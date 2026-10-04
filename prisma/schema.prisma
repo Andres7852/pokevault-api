@@ -18,8 +18,39 @@ model User {
   email     String   @unique
   password  String
   role      Role     @default(USER)
+  pedidos   Pedido[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@map("users")
+}
+
+model Producto {
+  id          Int      @id @default(autoincrement())
+  nombre      String
+  categoria   String
+  precio      Float
+  imagen      String
+  descripcion String
+  pedidos     Pedido[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("productos")
+}
+
+model Pedido {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  productoId Int
+  cantidad   Int      @default(1)
+  mensaje    String
+  total      Float
+  estado     String   @default("PENDIENTE")
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  producto   Producto @relation(fields: [productoId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("pedidos")
 }
