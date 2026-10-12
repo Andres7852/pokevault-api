@@ -9,5 +9,6 @@ router.use(authenticateToken);
 router.post('/', PedidoController.create);
 router.get('/mias', PedidoController.getMisPedidos);
 router.get('/', requireAdmin, PedidoController.getAll);
+router.patch('/:id/estado', requireAdmin, PedidoController.updateEstado);
 
 export default router;

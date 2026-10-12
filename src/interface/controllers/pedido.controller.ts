@@ -37,4 +37,18 @@ export class PedidoController {
       next(error);
     }
   }
+
+  static async updateEstado(req: AuthenticatedRequest, res: Response, next: NextFunction) {
+    try {
+      const id = parseInt(req.params.id as string);
+      if (isNaN(id)) { res.status(400).json({ error: 'ID inválido.' }); return; }
+      const { estado } = req.body;
+      if (!estado) { res.status(400).json({ error: 'El campo estado es obligatorio.' }); return; }
+      const pedido = await PedidoUseCase.updateEstado(id, estado);
+      res.status(200).json(pedido);
+    } catch (error: any) {
+      if (error.status) res.status(error.status).json({ error: error.message });
+      else next(error);
+    }
+  }
 }

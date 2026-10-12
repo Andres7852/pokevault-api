@@ -25,4 +25,12 @@ export class PedidoUseCase {
       orderBy: { createdAt: 'desc' },
     });
   }
+
+  static async updateEstado(id: number, estado: string) {
+    const pedido = await prisma.pedido.findUnique({ where: { id } });
+    if (!pedido) throw { status: 404, message: 'Pedido no encontrado.' };
+    const estadosValidos = ['PENDIENTE', 'ENVIADO', 'ENTREGADO', 'CANCELADO'];
+    if (!estadosValidos.includes(estado)) throw { status: 400, message: 'Estado no válido.' };
+    return prisma.pedido.update({ where: { id }, data: { estado } });
+  }
 }
