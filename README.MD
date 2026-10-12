@@ -6,10 +6,10 @@ API REST profesional para **PokéVault** (Tienda de Coleccionables y Cartas Pok�
 
 ## 🌐 Enlaces de Despliegue
 
-| Servicio         | Plataforma       | URL                       |
-| :--------------- | :--------------- | :------------------------ |
-| **API Backend**  | Render / Railway | --- AUN NO DISPONIBLE --- |
-| **Frontend Web** | Vercel           | --- AUN NO DISPONIBLE --- |
+| Servicio         | Plataforma | URL                                     |
+| :--------------- | :--------- | :-------------------------------------- |
+| **API Backend**  | Render     | https://pokevault-api-zo59.onrender.com |
+| **Frontend Web** | Vercel     | --- AUN NO DISPONIBLE ---               |
 
 ---
 
