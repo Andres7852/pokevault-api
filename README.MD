@@ -9,7 +9,7 @@ API REST profesional para **Pok√©Vault** (Tienda de Coleccionables y Cartas Pok√
 | Servicio         | Plataforma | URL                                     |
 | :--------------- | :--------- | :-------------------------------------- |
 | **API Backend**  | Render     | https://pokevault-api-zo59.onrender.com |
-| **Frontend Web** | Vercel     | --- AUN NO DISPONIBLE ---               |
+| **Frontend Web** | Vercel     | https://pokevault-web-bice.vercel.app/  |
 
 ---
 
