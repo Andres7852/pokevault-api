@@ -167,4 +167,4 @@ En PokéVault ambos códigos tienen propósitos semánticos distintos y claramen
 
 ## 📸 Network Tab
 
-Aun no se adjuntan imagenes de la red.
+![alt text](image.png)
